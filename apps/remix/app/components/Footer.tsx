@@ -34,12 +34,18 @@ export default function Footer() {
         {/*  className="text-gray-400 hover:text-gray-500  scale-[1.2]" rel="noreferrer">*/}
         {/*  🌍*/}
         {/*</Link>*/}
+          <Link
+              to="/"
+              className="text-gray-400 hover:text-gray-500">
+              {t("Virtual Temporary Email")}
+          </Link>
         <Link
-          to="zhihao2030@163.com"
-          title="Email"
+          to="/Short-link"
           className="text-gray-400 hover:text-gray-500">
-          <MailIcon className="w-6 h-6" />
+            {t("Short-Link")}
         </Link>
+
+
         {/*<Link*/}
         {/*  to="https://twitter.com/yesmoree"*/}
         {/*  target="_blank"*/}
