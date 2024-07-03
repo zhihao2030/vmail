@@ -97,4 +97,14 @@ app.get("/mails", withMailbox, async (c) => {
   return c.json(mails);
 });
 
+app.post("/short", async (c) => {
+  const body = await c.req.json()
+  const res = await app.request('http://39.107.248.238/smq/shorten',{
+    method:'POST',
+    body:JSON.stringify({
+      longUrl: body?.longUrl
+    })
+  })
+  return c.json(res);
+});
 export default app;

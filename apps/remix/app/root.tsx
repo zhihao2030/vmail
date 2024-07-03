@@ -16,11 +16,11 @@ import { useTranslation } from "react-i18next";
 import i18next from "~/i18next.server";
 
 export const loader: LoaderFunction = async ({ request }) => {
-  let locale = await i18next.getLocale(request);
+  const locale = await i18next.getLocale(request);
   return json({ locale });
 };
 
-export let handle = {
+export const handle = {
   // In the handle export, we can add a i18n key with namespaces our route
   // will need to load. This key can be a single string or an array of strings.
   // TIP: In most cases, you should set this to your defaultNS from your i18n config
@@ -33,8 +33,8 @@ export const links: LinksFunction = () => [
 ];
 
 export default function App() {
-  let { locale } = useLoaderData<typeof loader>();
-  let { i18n } = useTranslation();
+  const { locale } = useLoaderData<typeof loader>();
+  const { i18n } = useTranslation();
   useChangeLanguage(locale);
 
   return (
@@ -47,14 +47,15 @@ export default function App() {
         {/* Google Analytics */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-39WSEGK1FQ"></script>
+          src="https://www.googletagmanager.com/gtag/js?id=G-4H800SD2DB"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-39WSEGK1FQ');
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                
+                gtag('config', 'G-4H800SD2DB');
             `,
           }}></script>
       </head>
