@@ -10,7 +10,7 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 import stylesheet from "./tailwind.css";
-
+import icon from './favicon-32x32.png'
 import { useChangeLanguage } from "remix-i18next/react";
 import { useTranslation } from "react-i18next";
 import i18next from "~/i18next.server";
@@ -30,6 +30,7 @@ export const handle = {
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
+  { rel: "icon", href: icon}
 ];
 
 export default function App() {
