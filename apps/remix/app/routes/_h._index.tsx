@@ -94,33 +94,33 @@ export const action: ActionFunction = async ({ request }) => {
             });
         }
     } else if (_action === "create") {
-        if (siteKey) {
-            const response = formData.get("cf-turnstile-response");
-            if (!response) {
-                return {
-                    error: "No captcha response",
-                };
-            }
-            const verifyEndpoint =
-                "https://challenges.cloudflare.com/turnstile/v0/siteverify";
-            const secret = process.env.TURNSTILE_SECRET || "";
-            const resp = await fetch(verifyEndpoint, {
-                method: "POST",
-                body: JSON.stringify({
-                    secret,
-                    response,
-                }),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
-            const data = await resp.json();
-            if (!data.success) {
-                return {
-                    error: "Failed to verify captcha",
-                };
-            }
-        }
+        // if (siteKey) {
+        //     const response = formData.get("cf-turnstile-response");
+        //     if (!response) {
+        //         return {
+        //             error: "No captcha response",
+        //         };
+        //     }
+        //     const verifyEndpoint =
+        //         "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+        //     const secret = process.env.TURNSTILE_SECRET || "";
+        //     const resp = await fetch(verifyEndpoint, {
+        //         method: "POST",
+        //         body: JSON.stringify({
+        //             secret,
+        //             response,
+        //         }),
+        //         headers: {
+        //             "Content-Type": "application/json",
+        //         },
+        //     });
+        //     const data = await resp.json();
+        //     if (!data.success) {
+        //         return {
+        //             error: "Failed to verify captcha",
+        //         };
+        //     }
+        // }
 
         const domains = (process.env.EMAIL_DOMAIN || "").split(",");
         if (domains.length === 0) {
@@ -284,20 +284,20 @@ export default function Index() {
 
                 {!loaderData?.userMailbox && (
                     <Form method="POST" className="w-full md:max-w-[350px]">
-                        {loaderData.siteKey && (
-                            <div className="text-sm relative mb-4">
-                                <div className="mb-3 font-semibold">{t("Validater")}</div>
-                                <div className="[&amp;_iframe]:!w-full h-[65px] max-w-[300px] bg-gray-700">
-                                    <Turnstile
-                                        className="z-10 border-none"
-                                        siteKey={loaderData.siteKey}
-                                        options={{
-                                            theme: "dark",
-                                        }}
-                                    />
-                                </div>
-                            </div>
-                        )}
+                        {/*{loaderData.siteKey && (*/}
+                        {/*    <div className="text-sm relative mb-4">*/}
+                        {/*        <div className="mb-3 font-semibold">{t("Validater")}</div>*/}
+                        {/*        <div className="[&amp;_iframe]:!w-full h-[65px] max-w-[300px] bg-gray-700">*/}
+                        {/*            <Turnstile*/}
+                        {/*                className="z-10 border-none"*/}
+                        {/*                siteKey={loaderData.siteKey}*/}
+                        {/*                options={{*/}
+                        {/*                    theme: "dark",*/}
+                        {/*                }}*/}
+                        {/*            />*/}
+                        {/*        </div>*/}
+                        {/*    </div>*/}
+                        {/*)}*/}
                         {loaderData.domains && loaderData.domains.length > 1 && (
                             <>
                                 <div className="mb-3 text-sm font-semibold">{t("Domain")}</div>
