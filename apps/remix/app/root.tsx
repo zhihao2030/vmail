@@ -40,16 +40,18 @@ export default function App() {
 
   return (
     <html lang={locale} dir={i18n.dir()}>
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-        {/* Google Analytics */}
-        <script
+    <head>
+      <meta charSet="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <Meta/>
+      <Links/>
+      {/* Google Analytics */}
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1877146996810982"
+              crossOrigin="anonymous"></script>
+      <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-4H800SD2DB"></script>
-        <script
+      <script
           dangerouslySetInnerHTML={{
             __html: `
                 window.dataLayer = window.dataLayer || [];
@@ -59,13 +61,13 @@ export default function App() {
                 gtag('config', 'G-4H800SD2DB');
             `,
           }}></script>
-      </head>
-      <body className="">
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-      </body>
+    </head>
+    <body className="">
+    <Outlet/>
+    <ScrollRestoration/>
+    <Scripts/>
+    <LiveReload/>
+    </body>
     </html>
   );
 }
