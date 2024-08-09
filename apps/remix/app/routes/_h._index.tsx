@@ -33,14 +33,14 @@ import Password from "~/components/icons/Password";
 
 export const meta: MetaFunction = () => {
     return [
-        { title: "Virtual Temporary Email ，临时邮箱，虚拟邮件，,临时邮件，虚拟邮箱，在线邮箱，免费" },
+        { title: "Virtual Temporary Email" },
         {
             name: "description",
-            content: "提供隐私友好的虚拟临时邮箱服务，有效期1天，免费使用。保护您的隐私信息，方便快捷的在线邮箱解决方案。Virtual temporary Email. Privacy friendly, Valid for 1 day, Cloudflare.",
+            content: "提供隐私友好的免费虚拟临时邮箱邮件服务，虚拟邮箱邮件有效期1天，无需登录免费使用虚拟邮箱。虚拟邮件保护您的隐私信息，方便快捷的不登录在线邮箱解决方案。Virtual temporary Email. Privacy friendly, Valid for 1 day, Don't need to sign.",
         },
         {
             name: "keywords",
-            content: "虚拟邮箱, 临时邮箱，虚拟邮件，临时邮件,临时邮箱, 在线邮箱, 隐私友好邮箱, 一次性邮箱, 有效期邮箱, 云邮箱服务, Virtual email, Temporary email, Online email, Privacy-friendly email, Disposable email, Validity email, Cloud email",
+            content: "虚拟邮箱, 临时邮箱，虚拟邮件，临时邮件,临时邮箱, 在线邮箱, 隐私友好邮箱, 无需登录，不登录使用 一次性邮箱, 有效期邮箱, 云邮箱服务, 免费, Virtual email, Temporary email, Online email, Privacy-friendly email, Disposable email, Validity email, Cloud email,Don't need to sign, Free",
         }
     ];
 };
