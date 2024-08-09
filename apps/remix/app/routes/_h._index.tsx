@@ -322,7 +322,7 @@ export default function Index() {
                             name="_action"
                             disabled={navigation.state != "idle"}
                             className="py-2.5 rounded-md w-full bg-cyan-600 hover:opacity-90 disabled:cursor-not-allowed disabled:bg-zinc-500">
-                            {t("Create temporary email")}
+                            {navigation.state != "idle" ?'loading... ' : t("Create temporary email")}
                         </button>
                         <p
                             className="mt-4 text-sm text-cyan-500 cursor-pointer"
