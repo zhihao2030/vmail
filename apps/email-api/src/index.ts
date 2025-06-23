@@ -97,7 +97,7 @@ app.get("/mails", withMailbox, async (c) => {
   return c.json(mails);
 });
 
-app.get("/mails", withMailbox, async (c) => {
+app.get("/mails/get", async (c) => {
   const mailbox = c.req.query("mailbox");
   if (!mailbox) {
     return c.json({ error: "Missing mailbox" }, 400);
