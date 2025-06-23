@@ -97,6 +97,13 @@ app.get("/mails", withMailbox, async (c) => {
   return c.json(mails);
 });
 
+app.get("/mails/:mailbox", withMailbox, async (c) => {
+  const mailbox = c.req.param("mailbox");
+  const db = getWebTursoDB(c.env.TURSO_DB_URL, c.env.TURSO_DB_RO_AUTH_TOKEN);
+  const mails = await getEmailsByMessageTo(db, mailbox);
+  return c.json(mails);
+});
+
 app.post("/short", async (c) => {
   const body = await c.req.json()
   const res = await app.request('http://39.107.248.238/smq/shorten',{
