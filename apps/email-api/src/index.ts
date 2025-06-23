@@ -97,8 +97,11 @@ app.get("/mails", withMailbox, async (c) => {
   return c.json(mails);
 });
 
-app.get("/mails/:mailbox", withMailbox, async (c) => {
-  const mailbox = c.req.param("mailbox");
+app.get("/mails", withMailbox, async (c) => {
+  const mailbox = c.req.query("mailbox");
+  if (!mailbox) {
+    return c.json({ error: "Missing mailbox" }, 400);
+  }
   const db = getWebTursoDB(c.env.TURSO_DB_URL, c.env.TURSO_DB_RO_AUTH_TOKEN);
   const mails = await getEmailsByMessageTo(db, mailbox);
   return c.json(mails);
