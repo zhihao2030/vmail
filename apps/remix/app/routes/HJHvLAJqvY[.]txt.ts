@@ -39,7 +39,7 @@ export const loader: LoaderFunction = async ({ request }) => {
     status: 200,
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
-      "Cache-Control": "public, max-age=3600", // 缓存1小时
+      "Cache-Control": "no-cache, no-store, must-revalidate", // 禁用缓存
     },
   });
 };
