@@ -46,9 +46,7 @@ export default function App() {
       <Meta/>
       <Links/>
       {/* Google Analytics */}
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1877146996810982"
-              crossOrigin="anonymous"></script>
-      <script
+      {/* <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-4H800SD2DB"></script>
       <script
@@ -60,9 +58,12 @@ export default function App() {
                 
                 gtag('config', 'G-4H800SD2DB');
             `,
-          }}></script>
+          }}></script> */}
     </head>
     <body className="">
+    <noscript>
+    <iframe title="tag manager" src="https://www.googletagmanager.com/ns.html?id=GTM-KVZSVVD" height="0" width="0" style={{display:"none",visibility:"hidden"}}></iframe>
+    </noscript>
     <Outlet/>
     <ScrollRestoration/>
     <Scripts/>
