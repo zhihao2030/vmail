@@ -61,9 +61,9 @@ export default function App() {
           }}></script> */}
     </head>
     <body className="">
-    <noscript>
-    <iframe title="tag manager" src="https://www.googletagmanager.com/ns.html?id=GTM-KVZSVVD" height="0" width="0" style={{display:"none",visibility:"hidden"}}></iframe>
-    </noscript>
+    <noscript dangerouslySetInnerHTML={{
+      __html: '<iframe title="tag manager" src="https://www.googletagmanager.com/ns.html?id=GTM-KVZSVVD" height="0" width="0" style="display:none;visibility:hidden"></iframe>'
+    }} />
     <Outlet/>
     <ScrollRestoration/>
     <Scripts/>
