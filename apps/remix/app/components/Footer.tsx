@@ -68,7 +68,7 @@ export default function Footer() {
           title="Buy me a coffee">
           <Coffee className="w-6 h-6" />
         </Link> */}
-        <iframe title="tag manager" src="https://www.googletagmanager.com/ns.html?id=GTM-KVZSVVD" frameBorder="0"></iframe>
+        {/* <iframe title="tag manager" src="https://www.googletagmanager.com/ns.html?id=GTM-KVZSVVD" frameBorder="0"></iframe> */}
       </div>
     </div>
   );
